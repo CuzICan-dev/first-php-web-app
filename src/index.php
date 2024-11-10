@@ -23,7 +23,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
   
   <link rel="stylesheet" href="styles/root.css">
 
-  <title>Document</title>
+  <title>My Blog</title>
 </head>
 <body>
   <header>
@@ -49,6 +49,65 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
 
     </nav>
   </header>
+
+  <section class="post-slider">
+    <h2>Top Publications</h2>
+    <div class="slider-wrapper">
+      <button class="carousel-button prev"><i class="fa-solid fa-chevron-left fa-2xl"></i></button>
+      <button class="carousel-button next"><i class="fa-solid fa-chevron-right fa-2xl"></i></button>
+      <ul class="slider">
+        <li class="slider-item">
+          <img src="images/image_1.png" alt="image_1">
+          <h3 class="title">First Slide Lable</h3>
+        </li>
+
+        <li class="slider-item">
+          <img src="images/image_2.png" alt="image_2">
+          <h3 class="title">Second Slide Label</h3>
+        </li>
+
+        <li class="slider-item">
+          <img src="images/image_3.png" alt="image_3">
+          <h3 class="title">Third Slide Label</h3>
+        </li>
+
+        <li class="slider-item">
+          <img src="images/image_4.png" alt="image_4">
+          <h3 class="title">Fourth Slide Label</h3>
+        </li>
+
+        <li class="slider-item">
+          <img src="images/image_5.png" alt="image_5">
+          <h3 class="title">Fifth Slide Label</h3>
+        </li>
+
+        <li class="slider-item">
+          <img src="images/image_6.png" alt="image_6">
+          <h3 class="title">Sixth Slide Label</h3>
+        </li>
+
+        <li class="slider-item">
+          <img src="images/image_7.png" alt="image_7">
+          <h3 class="title">Seventh Slide Label</h3>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <script>
+    const sliderContainer = document.querySelector('.slider-wrapper');
+    const slider = document.querySelector('.slider');
+    const nextBtn = document.querySelector('.carousel-button.prev');
+    const prevBtn = document.querySelector('.carousel-button.next');
+
+    let sliders = document.querySelectorAll('.slider-item');
+    let index = 1;
+
+    const firstClone = sliders[0].cloneNode(true);
+    const lastClone = sliders[sliders.length - 1].cloneNode(true);
+
+
+  </script>
 </body>
 </html>
 
