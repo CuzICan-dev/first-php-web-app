@@ -45,7 +45,6 @@ const startSlide = () => {
 
 slider.addEventListener('transitionend', () => {
   sliders = document.querySelectorAll('.slider-item');
-  console.log(index);
   try{
     if(sliders[index].id === firstClone.id) {
       slider.style.transition = 'none';
