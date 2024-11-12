@@ -23,6 +23,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
   
   <link rel="stylesheet" href="styles/root.css">
   <link rel="stylesheet" href="styles/slider.css">
+  <link rel="stylesheet" href="styles/header.css">
 
   <title>My Blog</title>
 </head>
