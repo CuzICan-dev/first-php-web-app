@@ -9,7 +9,7 @@
 }
 
 .slider-wrapper {
-  width: 70vw;
+  width: var(--display-width);
   height: 100%;
   margin: 0 auto;
   position: relative;

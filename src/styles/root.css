@@ -1,4 +1,6 @@
 :root {
+  --display-width: 70vw;
+
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -40,9 +42,12 @@ header *{
 
 .header-nav{
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  justify-content: space-between;
   align-items: center;
   height: 3.5rem;
+  width: var(--display-width);
+  margin: 0 auto;
 }
 
 .logo-link {
