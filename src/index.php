@@ -96,6 +96,69 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
     </div>
   </section>
 
+  <main>
+    <h2>Last Publications</h2>
+    <div class="main-grid">
+      <div class="publications">
+        <div class="publication">
+          <img src="images/image_small.png" alt="">
+          <div class="publication-content">
+            <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
+            <div>
+              <i class="fa-regular fa-user"><span>Author Name</span></i>
+              <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
+            </div>
+            <p>Description: Explore the most popular JavaScript libraries of the year! Learn how these tools can save you time, improve code quality, and enhance your web projects.</p>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img src="images/image_small.png" alt="">
+          <div class="publication-content">
+            <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
+            <div>
+              <i class="fa-regular fa-user"><span>Author Name</span></i>
+              <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
+            </div>
+            <p>Description: Explore the most popular JavaScript libraries of the year! Learn how these tools can save you time, improve code quality, and enhance your web projects.</p>
+          </div>
+        </div>
+
+        <div class="publication">
+          <img src="images/image_small.png" alt="">
+          <div class="publication-content">
+            <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
+            <div>
+              <i class="fa-regular fa-user"><span>Author Name</span></i>
+              <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
+            </div>
+            <p>Description: Explore the most popular JavaScript libraries of the year! Learn how these tools can save you time, improve code quality, and enhance your web projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar">
+        <div class="search">
+          <h3>Search</h3>
+          <input type="text" name="search-term" placeholder="Insert Search ward...">
+        </div>
+
+        <div class="topics-section">
+          <h3>Topics</h3>
+          <ul class="topics-list">
+            <li class="topics"><a href="#">Poems</a></li>
+            <li class="topics"><a href="#">Quotes</a></li>
+            <li class="topics"><a href="#">Fiction</a></li>
+            <li class="topics"><a href="#">Biography</a></li>
+            <li class="topics"><a href="#">Motivation</a></li>
+            <li class="topics"><a href="#">Inspiration</a></li>
+            <li class="topics"><a href="#">Life Lessons</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+
   <script src="/scripts/slider.js"></script>
 </body>
 </html>
