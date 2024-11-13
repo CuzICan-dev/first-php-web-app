@@ -12,10 +12,8 @@ header *{
 .header-nav{
   display: flex;
   justify-content: space-around;
-  /* justify-content: space-between; */
   align-items: center;
   height: 3.5rem;
-  /* width: var(--display-width); */
   margin: 0 auto;
 }
 
