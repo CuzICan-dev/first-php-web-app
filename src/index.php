@@ -106,7 +106,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
           <img src="images/image_small.png" alt="">
           <div class="publication-content">
             <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
-            <div>
+            <div class="publication-author">
               <i class="fa-regular fa-user"><span>Author Name</span></i>
               <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
             </div>
@@ -118,7 +118,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
           <img src="images/image_small.png" alt="">
           <div class="publication-content">
             <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
-            <div>
+            <div class="publication-author">
               <i class="fa-regular fa-user"><span>Author Name</span></i>
               <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
             </div>
@@ -130,7 +130,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
           <img src="images/image_small.png" alt="">
           <div class="publication-content">
             <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
-            <div>
+            <div class="publication-author">
               <i class="fa-regular fa-user"><span>Author Name</span></i>
               <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
             </div>
@@ -142,7 +142,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
           <img src="images/image_small.png" alt="">
           <div class="publication-content">
             <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
-            <div>
+            <div class="publication-author">
               <i class="fa-regular fa-user"><span>Author Name</span></i>
               <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
             </div>
@@ -154,7 +154,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
           <img src="images/image_small.png" alt="">
           <div class="publication-content">
             <h2>Top 10 JavaScript Libraries to Streamline Your Development</h2>
-            <div>
+            <div class="publication-author">
               <i class="fa-regular fa-user"><span>Author Name</span></i>
               <i class="fa-regular fa-calendar"><span>Mar 11, 2019</span></i>
             </div>
