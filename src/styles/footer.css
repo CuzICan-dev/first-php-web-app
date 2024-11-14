@@ -1,0 +1,106 @@
+/* footer */
+
+footer{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #303036;
+  color: #d3d3d3;
+}
+
+footer .footer-container{
+  width: var(--display-width);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 8rem;
+}
+
+footer .footer-container .footer-section h3{
+  color: white;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 20px 0 20px 0;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: left;
+  gap: 10px; /* space between icons */
+}
+
+.social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px; /* Adjust width and height as desired */
+  height: 40px;
+  border: 2px solid #fff; /* Border around each icon */
+  border-radius: 50%; /* Circular border */
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.social-icons a:hover {
+  color: #008484;
+  border-color: #008484;
+}
+
+footer .footer-container .footer-section-post h3{
+  color: white;
+  font-size: 1.5rem;
+  padding: 0;
+  margin: 20px 0 20px 0;
+}
+
+.footer-section-post form {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section-post form input,
+.footer-section-post form textarea {
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  padding: 10px;
+  outline: none;
+  margin-bottom: 5px;
+  background-color: #272727;
+  color: white;
+}
+
+.footer-section-post form textarea {
+  height: 80px;
+  resize: none;
+}
+
+.footer-section-post form button{
+  font-size: 1rem;
+  width: 60%;
+  height: 30px;
+  margin: 5px auto 0;
+  background-color: #272727;
+  border: 1px solid #494949;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-container .footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-container .footer-section ul li a{
+  display: block;
+  width: 100%;
+  padding: 8px 0;
+  transition: all 0.2s;
+}
+
+.footer-container .footer-section ul li a:hover {
+  transform: translateX(10px);
+  color: #008484;
+}

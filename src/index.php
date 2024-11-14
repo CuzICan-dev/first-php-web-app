@@ -24,6 +24,8 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
   <link rel="stylesheet" href="styles/root.css">
   <link rel="stylesheet" href="styles/slider.css">
   <link rel="stylesheet" href="styles/header.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/footer.css">
 
   <title>My Blog</title>
 </head>
@@ -209,7 +211,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
         </ul>
       </div>
 
-      <div class="footer-section">
+      <div class="footer-section-post">
         <h3>Contact Us</h3>
         <form action="#" method="post">
           <input type="email" placeholder="Your email address..." required>
@@ -219,7 +221,7 @@ define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom-copy-right">
       <p>&copy; myblog.com | Designed by Andrievskii</p>
     </div>
   </footer>
