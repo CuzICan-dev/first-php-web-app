@@ -58,10 +58,10 @@ function select(PDO $pdo, string $table, array $params = [], bool $single = fals
 
   // Fetch results
   if ($single) {
-      return $query->fetch(PDO::FETCH_ASSOC) ?: []; // Fetch single row or empty array if none
+      return $query->fetch() ?: []; // Fetch single row or empty array if none
   }
 
-  return $query->fetchAll(PDO::FETCH_ASSOC); // Fetch all rows
+  return $query->fetchAll(); // Fetch all rows
 }
 
 /**
