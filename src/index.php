@@ -8,7 +8,7 @@ declare(strict_types=1);
 // include_once './database/connect.php';
 
 require_once 'path.php';
-
+include_once './database/db.php';
 ?>
 
 <!DOCTYPE html>
