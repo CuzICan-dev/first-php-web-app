@@ -3,6 +3,7 @@
 header {
   background-color: #008484;
   width: 100%;
+  height: auto;
 }
 
 header *{
