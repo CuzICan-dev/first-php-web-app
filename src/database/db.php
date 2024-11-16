@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 require_once 'connect.php';
 
+// Define allowed tables as a constant
+define('ALLOWED_TABLES', ['users']);
+
 function htmlDisplayQueary(mixed $value){
   echo '<pre>';
   print_r($value);
@@ -21,65 +24,64 @@ function dbCheckError(PDOStatement $query){
   return true;
 }
 
-// fetch all rows in selected table
-function selectAll(PDO $pdo, string $table, array $params = []): array{
- 
-  $sql = "SELECT * FROM $table";
-
-  if(!empty($params)){
-    $i = 0;
-    foreach($params as $key => $value){
-      if(!is_numeric($value)){
-        $value = "'" . $value . "'";
-      }
-      if($i === 0){
-        $sql .= " WHERE $key = $value";
-      }
-      else{
-        $sql .= " AND $key = $value";
-      }
-      $i++;
-    }
+function validateTable(string $table): void {
+  if (!in_array($table, ALLOWED_TABLES)) {
+      throw new InvalidArgumentException("Invalid table name provided.");
   }
-  
-  $query = $pdo->prepare($sql);
-  $query->execute();
-  dbCheckError($query);
-  
-  return $query->fetchAll();
 }
 
-// fetch first rows in selected table
-function selectOne(PDO $pdo, string $table, array $params = []): array{
- 
+function select(PDO $pdo, string $table, array $params = [], bool $single = false): array {
+
+  validateTable($table); // Validate the table
+
+  // Base query
   $sql = "SELECT * FROM $table";
 
-  if(!empty($params)){
-    $i = 0;
-    foreach($params as $key => $value){
-      if(!is_numeric($value)){
-        $value = "'" . $value . "'";
+  // Add WHERE clause if parameters are provided
+  if (!empty($params)) {
+      $conditions = [];
+      foreach ($params as $key => $value) {
+          $conditions[] = "$key = :$key"; // Use named placeholders
       }
-      if($i === 0){
-        $sql .= " WHERE $key = $value";
-      }
-      else{
-        $sql .= " AND $key = $value";
-      }
-      $i++;
-    }
+      $sql .= " WHERE " . implode(' AND ', $conditions);
   }
 
-  // $sql .= " LIMIT 1 ";  
+  // Add LIMIT 1 if fetching a single row
+  if ($single) {
+      $sql .= " LIMIT 1";
+  }
+
+  // Prepare and execute the query
   $query = $pdo->prepare($sql);
-  $query->execute();
+  $query->execute($params); // Bind parameters securely
   dbCheckError($query);
-  
-  return $query->fetch();
+
+  // Fetch results
+  if ($single) {
+      return $query->fetch(PDO::FETCH_ASSOC) ?: []; // Fetch single row or empty array if none
+  }
+
+  return $query->fetchAll(PDO::FETCH_ASSOC); // Fetch all rows
+}
+
+/**
+* Fetch all rows in a table.
+*/
+function selectAll(PDO $pdo, string $table, array $params = []): array {
+  return select($pdo, $table, $params, false);
+}
+
+/**
+* Fetch the first row in a table.
+*/
+function selectOne(PDO $pdo, string $table, array $params = []): array {
+  return select($pdo, $table, $params, true);
 }
 
 function insert(PDO $pdo, string $table, array $params){
   // $sql = "INSERT INTO $table (admin, userName, email, password) VALUES (:adm, :user, :mail, :pass)";
+
+  validateTable($table); // Validate the table
 
   // Generate column names and placeholders
   $columns = implode(', ', array_keys($params));
@@ -94,10 +96,16 @@ function insert(PDO $pdo, string $table, array $params){
 }
 
 $arrData = [
-  'admin' => '0', 
-  'userName' => 'kushapa', 
-  'email' => 'kushapoepe@test.com', 
-  'password' => 'kusha1'
+  'admin' => '1', 
+  'userName' => 'Rumbusa', 
+  'email' => 'Rumbusa@test.com', 
+  'password' => '5566'
 ];
 
-insert($pdo, 'users', $arrData);
+$params = [
+  'admin' => 1
+];
+
+// insert($pdo, 'users', $arrData);
+
+// htmlDisplayQueary(selectAll($pdo, 'users', $params));
