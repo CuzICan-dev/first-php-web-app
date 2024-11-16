@@ -1,5 +1,5 @@
-.register-form-wrapper,
-.register-form-wrapper form {
+.form-wrapper,
+.form-wrapper form {
   width: var(--display-width);
   height: auto;
   display: flex;
@@ -24,4 +24,48 @@
 
 .input-wrapper input{
   width: 100%;
+  padding: 0 10px;
+  font-size: 1rem;
+  line-height: 2rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgba(68, 68, 68, 0.3);
+}
+
+.abbreviation {
+  font-size: 0.75rem;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.buttens-holder {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-btn {
+  font-size: 1rem;
+  background-color: #008484;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: #006669;
+}
+
+.login-link{
+  transition: all 0.2s;
+  padding: 5px;
+}
+
+.login-link:hover {
+  color: #006669;
+  transform: translateX(-5px);
 }
