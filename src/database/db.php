@@ -78,11 +78,26 @@ function selectOne(PDO $pdo, string $table, array $params = []): array{
   return $query->fetch();
 }
 
-$params = [
-  'admin' => 1,
-  'userName' => 'Roman'
+function insert(PDO $pdo, string $table, array $params){
+  // $sql = "INSERT INTO $table (admin, userName, email, password) VALUES (:adm, :user, :mail, :pass)";
+
+  // Generate column names and placeholders
+  $columns = implode(', ', array_keys($params));
+  $placeholders = ':' . implode(', :', array_keys($params));
+
+  // Construct the SQL query
+  $sql = "INSERT INTO $table ($columns) VALUES ($placeholders)";
+
+  $query = $pdo->prepare($sql);
+  $query->execute($params);
+  dbCheckError($query);
+}
+
+$arrData = [
+  'admin' => '0', 
+  'userName' => 'kushapa', 
+  'email' => 'kushapoepe@test.com', 
+  'password' => 'kusha1'
 ];
 
-
-// htmlDisplayQueary(selectAll($pdo, 'users', $params));
-htmlDisplayQueary(selectOne($pdo, 'users'));
+insert($pdo, 'users', $arrData);
