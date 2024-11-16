@@ -1,3 +1,9 @@
+<?php
+declare(strict_types=1);
+
+require_once 'path.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

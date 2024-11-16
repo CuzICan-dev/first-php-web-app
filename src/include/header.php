@@ -1,11 +1,11 @@
 <header>
   <nav class="header-nav">
-    <a href="#">
+    <a href="<?= BASE_URL ?>">
       <h1 class="logo-link">My blog</h1>
     </a>
 
     <ul>
-      <li><a href="#">Main</a></li>
+      <li><a href="<?= BASE_URL ?>">Main</a></li>
       <li><a href="#">About Us</a></li>
       <li><a href="#">Services</a></li>
       <li>

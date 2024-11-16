@@ -2,12 +2,13 @@
 
 declare(strict_types=1);
 
-define('root', __DIR__);
-define('db', __DIR__.DIRECTORY_SEPARATOR.'datebase');
+// define('root', __DIR__);
+// define('db', __DIR__.DIRECTORY_SEPARATOR.'datebase');
 
-// var_dump(db);
+// include_once './database/connect.php';
 
-include_once './database/connect.php';
+require_once 'path.php';
+
 ?>
 
 <!DOCTYPE html>
