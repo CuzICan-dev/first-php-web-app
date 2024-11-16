@@ -1,10 +1,13 @@
-<?php  
+<?php
+
+declare(strict_types=1);
 
 define('root', __DIR__);
-define('images', __DIR__.DIRECTORY_SEPARATOR.'images');
+define('db', __DIR__.DIRECTORY_SEPARATOR.'datebase');
 
+// var_dump(db);
 
-// var_dump(styles);
+include_once './database/connect.php';
 ?>
 
 <!DOCTYPE html>
