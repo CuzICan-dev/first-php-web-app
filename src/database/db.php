@@ -121,10 +121,18 @@ function update(PDO $pdo, string $table, int $id, array $params){
   dbCheckError($query);
 }
 
-$params = [
-  'admin' => 1,
-  'password' => '44',
-  'email' => 'RoTest@test.co.il'
-];
+/**
+* delete row in table
+*/
+function deleteRow(PDO $pdo, string $table, int $id){
+  // $sql = "DELETE FROM `users` WHERE `id` = 14"
 
-// update($pdo, 'users', 2, $params);
+  validateTable($table); // Validate the table
+  
+  // Construct the SQL query
+  $sql = "DELETE FROM $table WHERE id = :id";
+
+  $query = $pdo->prepare($sql);
+  $query->execute(['id' => $id]);
+  dbCheckError($query);
+}
