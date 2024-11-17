@@ -78,6 +78,9 @@ function selectOne(PDO $pdo, string $table, array $params = []): array {
   return select($pdo, $table, $params, true);
 }
 
+/**
+* insert to table
+*/
 function insert(PDO $pdo, string $table, array $params){
   // $sql = "INSERT INTO $table (admin, userName, email, password) VALUES (:adm, :user, :mail, :pass)";
 
@@ -95,17 +98,33 @@ function insert(PDO $pdo, string $table, array $params){
   dbCheckError($query);
 }
 
-$arrData = [
-  'admin' => '1', 
-  'userName' => 'Rumbusa', 
-  'email' => 'Rumbusa@test.com', 
-  'password' => '5566'
-];
+/**
+* update row in table
+*/
+function update(PDO $pdo, string $table, int $id, array $params){
+  // $sql = "UPDATE `users` SET `userName` = 'test' WHERE `id` = 14"
+
+  validateTable($table); // Validate the table
+
+  $str = '';
+  $conditions = [];
+  foreach ($params as $key => $value) {
+      $conditions[] = "$key = :$key"; // Use named placeholders
+  }
+  $str = implode(', ', $conditions);
+  
+  // Construct the SQL query
+  $sql = "UPDATE $table SET $str WHERE id = $id";
+
+  $query = $pdo->prepare($sql);
+  $query->execute($params);
+  dbCheckError($query);
+}
 
 $params = [
-  'admin' => 1
+  'admin' => 1,
+  'password' => '44',
+  'email' => 'RoTest@test.co.il'
 ];
 
-// insert($pdo, 'users', $arrData);
-
-// htmlDisplayQueary(selectAll($pdo, 'users', $params));
+// update($pdo, 'users', 2, $params);
