@@ -2,6 +2,11 @@
 declare(strict_types=1);
 
 require_once 'path.php';
+require_once 'controllers/users.php';
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,30 +34,30 @@ require_once 'path.php';
   <?php include ('./include/header.php'); ?>
 
   <main class="form-wrapper">
-    <form action="#">
-      <h2>Register Your Account</h2>
-      <div class="input-wrapper">
-        <label for="login-name-input">Login Name</label>
-        <input id="login-name-input" type="text" placeholder="enter your login name">
-      </div>
-      <div class="input-wrapper">
-        <label for="email-input">Email</label>
-        <input id="email-input" type="text" placeholder="enter your Email">
-        <span class="abbreviation">Your mail wont be used for spam</span>
-      </div>
-      <div class="input-wrapper">
-        <label for="password-input">Password</label>
-        <input id="password-input" type="password" placeholder="enter your Password">
-      </div>
-      <div class="input-wrapper">
-        <label for="password-repeat-input">Repeat Password</label>
-        <input id="password-repeat-input" type="password" placeholder="enter your Password again">
-      </div>
-      <div class="buttens-holder">
-        <button class="submit-btn">Register</button>
-        <a class="login-link" href="#">Log-in</a>
-      </div>
-    </form>
+  <form method="post" action="registration-page.php">
+    <h2>Register Your Account</h2>
+    <div class="input-wrapper">
+      <label for="login-name-input">Login Name</label>
+      <input id="login-name-input" type="text" name="login-name" placeholder="enter your login name">
+    </div>
+    <div class="input-wrapper">
+      <label for="email-input">Email</label>
+      <input id="email-input" type="text" name="email" placeholder="enter your Email">
+      <span class="abbreviation">Your mail won't be used for spam</span>
+    </div>
+    <div class="input-wrapper">
+      <label for="password-input">Password</label>
+      <input id="password-input" type="password" name="password" placeholder="enter your Password">
+    </div>
+    <div class="input-wrapper">
+      <label for="password-repeat-input">Repeat Password</label>
+      <input id="password-repeat-input" type="password" name="password-repeat" placeholder="enter your Password again">
+    </div>
+    <div class="buttens-holder">
+      <button type="submit" class="submit-btn" name="button-reg">Register</button>
+      <a class="login-link" href="#">Log-in</a>
+    </div>
+  </form>
   </main>
 
   <?php include ('./include/footer.php'); ?>

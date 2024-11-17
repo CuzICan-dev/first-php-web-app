@@ -30,9 +30,10 @@ function validateTable(string $table): void {
   }
 }
 
-function select(PDO $pdo, string $table, array $params = [], bool $single = false): array {
+function select(string $table, array $params = [], bool $single = false): array {
 
   validateTable($table); // Validate the table
+  global $pdo;
 
   // Base query
   $sql = "SELECT * FROM $table";
@@ -67,24 +68,25 @@ function select(PDO $pdo, string $table, array $params = [], bool $single = fals
 /**
 * Fetch all rows in a table.
 */
-function selectAll(PDO $pdo, string $table, array $params = []): array {
-  return select($pdo, $table, $params, false);
+function selectAll(string $table, array $params = []): array {
+  return select($table, $params, false);
 }
 
 /**
 * Fetch the first row in a table.
 */
-function selectOne(PDO $pdo, string $table, array $params = []): array {
-  return select($pdo, $table, $params, true);
+function selectOne(string $table, array $params = []): array {
+  return select($table, $params, true);
 }
 
 /**
 * insert to table
 */
-function insert(PDO $pdo, string $table, array $params){
+function insert(string $table, array $params){
   // $sql = "INSERT INTO $table (admin, userName, email, password) VALUES (:adm, :user, :mail, :pass)";
 
   validateTable($table); // Validate the table
+  global $pdo;
 
   // Generate column names and placeholders
   $columns = implode(', ', array_keys($params));
@@ -96,15 +98,17 @@ function insert(PDO $pdo, string $table, array $params){
   $query = $pdo->prepare($sql);
   $query->execute($params);
   dbCheckError($query);
+  return $pdo->lastInsertId();
 }
 
 /**
 * update row in table
 */
-function update(PDO $pdo, string $table, int $id, array $params){
+function update(string $table, int $id, array $params){
   // $sql = "UPDATE `users` SET `userName` = 'test' WHERE `id` = 14"
 
   validateTable($table); // Validate the table
+  global $pdo;
 
   $str = '';
   $conditions = [];
@@ -124,11 +128,12 @@ function update(PDO $pdo, string $table, int $id, array $params){
 /**
 * delete row in table
 */
-function deleteRow(PDO $pdo, string $table, int $id){
+function deleteRow(string $table, int $id){
   // $sql = "DELETE FROM `users` WHERE `id` = 14"
 
   validateTable($table); // Validate the table
-  
+  global $pdo;
+
   // Construct the SQL query
   $sql = "DELETE FROM $table WHERE id = :id";
 
