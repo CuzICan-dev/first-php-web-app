@@ -1,23 +1,49 @@
 <?php
+declare(strict_types=1);
 
 require_once 'database/db.php';
 
-if(isset($_POST['login-name'])){
-  $login = $_POST['login-name'];
-  $email = $_POST['email'];
-  $password = password_hash($_POST['password-repeat'], PASSWORD_DEFAULT);
-  $admin = 0;
-  
-  $post = [
-    'userName' => $login,
-    'email' => $email,
-    'password' => $password,
-    'admin' => $admin
-  ];
+$errMsg = '';
 
-  $id = insert('users', $post);
-  
-  $lastRow = selectOne('users', ['id' => $id]);
-  
-  htmlDisplayQueary($lastRow);
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+  $admin = 0;
+  $login = trim($_POST['login-name']);
+  $email = trim($_POST['email']);
+  $password = trim($_POST['password']);
+  $passwordRepeat = trim($_POST['password-repeat']);
+
+  if ($login === '' || $email === '' || $password === '') {
+    $errMsg = "Not all the fields are filled!";
+  }
+  elseif (mb_strlen($login, 'UTF8') < 2) {
+    $errMsg = 'Login need to be atlist 2 charecters.';
+  }
+  elseif ($password !== $passwordRepeat) {
+    $errMsg = 'The passwords not matching.';
+  }
+  else {
+    $existingUser = selectOne('users', ['email' => $email]);
+    if (isset($existingUser['email']) && $existingUser['email'] === $email) {
+      $errMsg = 'User allrady exists.';
+    }
+    else {
+      $password = password_hash($_POST['password-repeat'], PASSWORD_DEFAULT);
+      $post = [
+        'userName' => $login,
+        'email' => $email,
+        'password' => $password,
+        'admin' => $admin
+      ];
+      $id = insert('users', $post);
+      $errMsg = "User" . "<strong> " . $login . " </strong>" . "was secssesfuly registered!";
+      // $lastRow = selectOne('users', ['id' => $id]);
+      // htmlDisplayQueary($lastRow);
+    }
+  }
+
+} 
+else {
+  // echo 'GET';
+  $login = '';
+  $email = '';
 }

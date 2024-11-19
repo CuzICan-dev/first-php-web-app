@@ -36,13 +36,16 @@ require_once 'controllers/users.php';
   <main class="form-wrapper">
   <form method="post" action="registration-page.php">
     <h2>Register Your Account</h2>
+    <div class="input-wrapper error-msg">
+      <p> <?= $errMsg ?> </p>
+    </div>
     <div class="input-wrapper">
       <label for="login-name-input">Login Name</label>
-      <input id="login-name-input" type="text" name="login-name" placeholder="enter your login name">
+      <input id="login-name-input" type="text" name="login-name" value="<?= $login ?>" placeholder="enter your login name">
     </div>
     <div class="input-wrapper">
       <label for="email-input">Email</label>
-      <input id="email-input" type="text" name="email" placeholder="enter your Email">
+      <input id="email-input" type="text" name="email" value="<?= $email ?>" placeholder="enter your Email">
       <span class="abbreviation">Your mail won't be used for spam</span>
     </div>
     <div class="input-wrapper">
