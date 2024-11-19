@@ -9,13 +9,26 @@
       <li><a href="#">About Us</a></li>
       <li><a href="#">Services</a></li>
       <li>
-        <a href="#">
-          <i class="fa-solid fa-user"></i>
-          Office</a>
-        <ul>
-          <li><a href="#">Admin Panel</a></li>
-          <li><a href="#">Exit</a></li>
-        </ul>
+        <?php if(isset($_SESSION['id'])): ?>
+          <a href="#">
+            <i class="fa-solid fa-user"></i>
+            <?php echo $_SESSION['login'] ?>
+          </a>
+          <ul>
+            <?php if($_SESSION['admin']): ?>
+              <li><a href="#">Admin Panel</a></li>
+            <?php endif; ?>
+            <li><a href="#">Exit</a></li>
+          </ul>
+        <?php else: ?>
+          <a href="<?= BASE_URL . 'login.php'; ?>">
+            <i class="fa-solid fa-user"></i>
+            Login
+          </a>
+          <ul>
+            <li><a href="<?= BASE_URL . 'registration-page.php'; ?>">Register</a></li>
+          </ul>
+        <?php endif; ?>
       </li>
     </ul>
 

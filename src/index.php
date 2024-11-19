@@ -9,6 +9,7 @@ declare(strict_types=1);
 
 require_once 'path.php';
 include_once './database/db.php';
+
 ?>
 
 <!DOCTYPE html>

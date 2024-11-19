@@ -36,8 +36,18 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
       ];
       $id = insert('users', $post);
       $errMsg = "User" . "<strong> " . $login . " </strong>" . "was secssesfuly registered!";
-      // $lastRow = selectOne('users', ['id' => $id]);
-      // htmlDisplayQueary($lastRow);
+      $user = selectOne('users', ['id' => $id]);
+      
+      $_SESSION['id'] = $user['id'];
+      $_SESSION['login'] = $user['userName'];
+      $_SESSION['admin'] = $user['admin'];
+
+      if($_SESSION['admin']){
+        header('location: ' . BASE_URL . 'admin/admin.php');
+      }
+      else{
+        header('location: ' . BASE_URL);
+      }
     }
   }
 
