@@ -18,7 +18,7 @@
             <?php if($_SESSION['admin']): ?>
               <li><a href="#">Admin Panel</a></li>
             <?php endif; ?>
-            <li><a href="#">Exit</a></li>
+            <li><a href="<?= BASE_URL . 'logout.php'; ?>">Exit</a></li>
           </ul>
         <?php else: ?>
           <a href="<?= BASE_URL . 'login.php'; ?>">
