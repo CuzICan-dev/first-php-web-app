@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 require_once 'path.php';
+require_once 'controllers/users.php';
 ?>
 
 <!DOCTYPE html>
@@ -29,18 +30,21 @@ require_once 'path.php';
   <?php include ('./include/header.php'); ?>
 
   <main class="form-wrapper">
-    <form action="#">
+    <form action="login.php" method="post">
       <h2>Login To Your Account</h2>
-      <div class="input-wrapper">
-        <label for="login-name-input">Login Name</label>
-        <input id="login-name-input" type="text" placeholder="enter your login name">
+      <div class="input-wrapper error-msg">
+        <p> <?= $errMsg ?> </p>
       </div>
+      <div class="input-wrapper">
+        <label for="login-name-input">Your mail</label>
+        <input id="email-input" type="text" name="email" value="<?= $email ?>" placeholder="enter your Email">
+        </div>
       <div class="input-wrapper">
         <label for="password-input">Password</label>
-        <input id="password-input" type="password" placeholder="enter your Password">
+        <input name="password" id="password-input" type="password" placeholder="enter your Password">
       </div>
       <div class="buttens-holder">
-        <button class="submit-btn">Login</button>
+        <button class="submit-btn" name="button-login">Login</button>
         <a class="login-link" href="#">Register Account</a>
       </div>
     </form>
