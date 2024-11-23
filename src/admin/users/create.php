@@ -40,13 +40,7 @@ $email = '';
   <?php include ('../../include/header-admin.php'); ?>
 
   <main>
-    <nav class="content-nav-bar">
-      <ul class="category-list">
-        <li class="category-list-item"><a href="#">Posts</a></li>
-        <li class="category-list-item"><a href="#">Users</a></li>
-        <li class="category-list-item"><a href="#">Comments</a></li>
-      </ul>
-    </nav>
+    <?php require_once '../../include/sidebar-admin.php'; ?>
 
     <div class="content-wrapper">
       <div class="control-buttens-wrapper">
