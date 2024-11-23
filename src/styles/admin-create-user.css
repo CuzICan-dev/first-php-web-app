@@ -1,0 +1,38 @@
+.content-menu form .input-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.content-menu form .input-wrapper label {
+  margin-bottom: 5px;
+}
+
+.content-menu form .input-wrapper input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 1rem;
+  line-height: 2rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgba(68, 68, 68, 0.3);
+}
+
+.content-menu form .input-wrapper label {
+  margin-bottom: 5px;
+}
+
+.content-menu form .input-wrapper input{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 1rem;
+  line-height: 2rem;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid rgba(68, 68, 68, 0.3);
+}
