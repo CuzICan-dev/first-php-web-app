@@ -27,8 +27,8 @@ session_start();
   <link rel="stylesheet" href="../../styles/header.css">
   <link rel="stylesheet" href="../../styles/footer.css">
   <link rel="stylesheet" href="../../styles/admin-root.css">
+  <link rel="stylesheet" href="../../styles/admin-post-form.css">
   <link rel="stylesheet" href="../../styles/admin-nav-bar.css">
-  <link rel="stylesheet" href="../../styles/admin-post-table.css">
 
   <title>My Blog</title>
 </head>
@@ -51,57 +51,23 @@ session_start();
       </div>
       <div class="content-menu">
         <h2>Adding Posts</h2>
-        <table class="content-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Post Name</th>
-              <th>Author</th>
-              <th>Control</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Some post about food 1</td>
-              <td>Admin</td>
-              <td class="table-buttons">
-                <a class="edit-btn" href="#">Edit</a>
-                <a class="delete-btn" href="#">Delite</a>
-              </td>
-            </tr>
+        <form action="">
+          <input type="text" placeholder="Title">
 
-            <tr>
-              <td>2</td>
-              <td>Some post about food 2</td>
-              <td>Admin</td>
-              <td class="table-buttons">
-                <a class="edit-btn" href="#">Edit</a>
-                <a class="delete-btn" href="#">Delite</a>
-              </td>
-            </tr>
+          <label class="post-content-lable" for="post-content">Post Content</label>
+          <textarea name="" id="post-content"></textarea>
 
-            <tr>
-              <td>3</td>
-              <td>Some post about food 3</td>
-              <td>Admin</td>
-              <td class="table-buttons">
-                <a class="edit-btn" href="#">Edit</a>
-                <a class="delete-btn" href="#">Delite</a>
-              </td>
-            </tr>
+          <input type="file">
 
-            <tr>
-              <td>4</td>
-              <td>Some post about food 4</td>
-              <td>Admin</td>
-              <td class="table-buttons">
-                <a class="edit-btn" href="#">Edit</a>
-                <a class="delete-btn" href="#">Delite</a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+          <select>
+            <option value="Option 1">Option 1</option>
+            <option value="Option 2">Option 2</option>
+            <option value="Option 3">Option 3</option>
+            <option value="Option 4">Option 4</option>
+          </select>
+
+          <button>Save Post</button>
+        </form>
       </div>
     </div>
   </main>

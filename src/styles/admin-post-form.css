@@ -1,0 +1,119 @@
+
+/* form for saving posst */
+
+.content-menu h2 {
+  text-align: center;
+}
+
+/* General form styling */
+.content-menu form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-menu form .post-content-lable {
+  margin: 0;
+  transform: translateY(15px);
+}
+
+/* Input and textarea styling */
+.content-menu form input[type="text"],
+.content-menu form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* Non-resizable textarea with a fixed height */
+.content-menu form textarea {
+  height: 300px; /* Adjust the height as needed */
+  resize: none; /* Disable resizing */
+}
+
+.content-menu form input[type="text"]:focus,
+.content-menu form textarea:focus {
+  border-color: #33b249;
+  outline: none;
+}
+
+/* File input styling */
+input[type=file] {
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: #007bff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+input[type=file]::file-selector-button:hover {
+  background: #0056b3;
+}
+
+
+/* Select dropdown styling */
+.content-menu form select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='gray'%3E%3Cpath fill-rule='evenodd' d='M10 12a.75.75 0 0 1-.53-.22l-3-3a.75.75 0 0 1 1.06-1.06L10 10.69l2.47-2.47a.75.75 0 1 1 1.06 1.06l-3 3A.75.75 0 0 1 10 12z' clip-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Label styling */
+.content-menu form label {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Save button styling */
+.content-menu form button {
+  width: 150px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.content-menu form button:hover {
+  background-color: #0056b3;
+}
+
+.content-menu form button:active {
+  background-color: #004a99;
+}
