@@ -1,0 +1,28 @@
+/* navigation bar admin */
+
+.content-nav-bar {
+  min-width: 220px;
+  background-color: #006669;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0 10px;
+}
+
+.category-list-item {
+  color: white;
+  box-sizing: border-box;
+  border-bottom: 1px solid white;
+}
+
+.category-list-item a {
+  display: block;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: padding-left 0.2s;
+}
+
+.category-list-item a:hover {
+  padding-left: 3px;
+}

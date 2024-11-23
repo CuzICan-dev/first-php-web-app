@@ -26,7 +26,9 @@ session_start();
   <link rel="stylesheet" href="../../styles/root.css">
   <link rel="stylesheet" href="../../styles/header.css">
   <link rel="stylesheet" href="../../styles/footer.css">
-  <link rel="stylesheet" href="../../styles/admin.css">
+  <link rel="stylesheet" href="../../styles/admin-root.css">
+  <link rel="stylesheet" href="../../styles/admin-nav-bar.css">
+  <link rel="stylesheet" href="../../styles/admin-post-table.css">
 
   <title>My Blog</title>
 </head>
