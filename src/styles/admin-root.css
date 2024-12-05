@@ -23,7 +23,22 @@ main {
   transition: background-color 0.2s;
 }
 
+.control-buttens-wrapper {
+  margin: 1rem 0;
+}
+
+.control-buttens-wrapper .add-btn,
+.control-buttens-wrapper .edit-btn {
+  box-sizing: border-box;
+  padding: 8px 20px;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 5px;
+  color: black;
+}
+
 .control-buttens-wrapper .add-btn {
+
   background-color: #33b249;
 }
 

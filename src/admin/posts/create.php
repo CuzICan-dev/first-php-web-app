@@ -40,8 +40,8 @@ session_start();
 
     <div class="content-wrapper">
       <div class="control-buttens-wrapper">
-        <button class="add-btn">Add Post</button>
-        <button class="edit-btn">Manage Posts</button>
+        <a href="create.php" class="add-btn">Create Post</a>
+        <a href="index.php" class="edit-btn">Edit Posts</a>
       </div>
       <div class="content-menu">
         <h2>Adding Posts</h2>

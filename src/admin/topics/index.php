@@ -40,8 +40,8 @@ session_start();
 
     <div class="content-wrapper">
       <div class="control-buttens-wrapper">
-        <button class="add-btn">Creater Category</button>
-        <button class="edit-btn">Manage Categories</button>
+        <a href="create.php" class="add-btn">Creater Category</a>
+        <a href="index.php" class="edit-btn">Manage Categories</a>
       </div>
       <div class="content-menu">
         <h2>Meneging Posts</h2>
